@@ -1,17 +1,26 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WOA.WebMVC.Data;
+using WOA.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddDataProtection()
+             .PersistKeysToFileSystem(new DirectoryInfo(@"serversharedirectory"));
+//.PersistKeysToFileSystem(new DirectoryInfo(@"//server/share/directory/"));
+//.PersistKeysToFileSystem(new DirectoryInfo(_configFolderPath));
+
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
