@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WOA.Models\WOA.Models.csproj" />
+    <ProjectReference Include="..\WOA.Data\WOA.Data.csproj" />
+  </ItemGroup>
 </Project>

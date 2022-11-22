@@ -14,6 +14,6 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<Item> Items { get; set; }
     public DbSet<ItemType> ItemTypes { get; set; }
     public DbSet<MaterialType> MaterialTypes { get; set; }
-    public DbSet<User> AppUsers { get; set; } 
+    
 }
 

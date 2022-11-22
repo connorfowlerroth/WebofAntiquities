@@ -1,24 +1,20 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WOA.Data
+namespace WOA.Models
 {
-	public class Listing
+	public class ListingCreate
 	{
-		public int ListingId { get; set; }
-
         [Required]
-        public Guid UserId { get; set; }
-
-        [Required]
+        [MinLength(3, ErrorMessage = "There are not enough characters in this description.")]
+        [MaxLength(50, ErrorMessage = "There are too many characters in this description.")]
         public string Description { get; set; }
 
         [Required]
         public decimal Price { get; set; }
 
-        [Required]
-        public bool Availability { get; set; }
+        //[Required]
+        //public bool Availability { get; set; }
 
         [Required]
         public string City { get; set; }
@@ -28,10 +24,6 @@ namespace WOA.Data
 
         [Required]
         public DateTimeOffset DatePosted { get; set; }
-
-        
-        public virtual Item Item { get; set; }
-
     }
 }
 

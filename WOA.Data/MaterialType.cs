@@ -10,6 +10,9 @@ namespace WOA.Data
 
 		[Required]
 		public string Name { get; set; }
-	}
+
+        public ICollection<Item> ListOfItems { get; set; }
+		 
+    }
 }
 

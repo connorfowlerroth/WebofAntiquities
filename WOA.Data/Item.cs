@@ -6,7 +6,7 @@ namespace WOA.Data
 {
 	public class Item
 	{
-        [Key]
+        [ForeignKey("Listing")]
 		public int ItemId { get; set; }
 
         public virtual Listing Listing { get; set; }
@@ -16,7 +16,6 @@ namespace WOA.Data
 		public decimal Height { get; set; }
 
 		public decimal Width { get; set; }
-
 
         [ForeignKey(nameof(ItemType))]
         public int ItemTypeId { get; set; }
@@ -29,6 +28,7 @@ namespace WOA.Data
     }
 
 	public enum Condition { Rough = 1, Fair, Good, Mint }
+
 
 	public enum TimePeriod
 	{
