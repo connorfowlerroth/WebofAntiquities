@@ -17,9 +17,6 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 
 builder.Services.AddDataProtection()
              .PersistKeysToFileSystem(new DirectoryInfo(@"serversharedirectory"));
-//.PersistKeysToFileSystem(new DirectoryInfo(@"//server/share/directory/"));
-//.PersistKeysToFileSystem(new DirectoryInfo(_configFolderPath));
-
 
 builder.Services.AddControllersWithViews();
 

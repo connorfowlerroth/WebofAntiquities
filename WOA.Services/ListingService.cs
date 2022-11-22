@@ -19,7 +19,7 @@ namespace WOA.Services
             var entity =
                 new Listing()
                 {
-                    UserId = _userId,
+                    OwnerId = _userId,
                     Description = model.Description,
                     Price = model.Price,
                     City = model.City,
@@ -34,7 +34,7 @@ namespace WOA.Services
         public IEnumerable<ListingListItem> GetListingsByUserId()
         {
             var query = _context.Listings
-                .Where(e => e.UserId == _userId)
+                .Where(e => e.OwnerId == _userId)
                 .Select(
                     e =>
                         new ListingListItem

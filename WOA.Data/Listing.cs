@@ -9,7 +9,7 @@ namespace WOA.Data
 		public int ListingId { get; set; }
 
         [Required]
-        public Guid UserId { get; set; }
+        public Guid OwnerId { get; set; }
 
         [Required]
         public string Description { get; set; }

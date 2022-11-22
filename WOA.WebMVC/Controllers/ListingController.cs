@@ -14,7 +14,7 @@ namespace WOA.WebMVC.Controllers
     {
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.Get+UserId());
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var Service = new ListingService(userId);
             var model = Service.GetListingsByUserId();
 
