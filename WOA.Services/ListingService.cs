@@ -1,25 +1,31 @@
 ﻿using System;
 using WOA.Data;
+using WOA.Contracts;
 using WOA.Models;
 
 namespace WOA.Services
 {
-	public class ListingService
-	{
+    public class ListingService : IListingService
+    {
         private readonly ApplicationDbContext _context;
-        private readonly Guid _userId;
+        private Guid _userId;
 
-		public ListingService(Guid userId)
-		{
+        public ListingService(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public void SetUserId(Guid userId)
+        {
             _userId = userId;
-		}
+        }
 
         public bool CreateListing(ListingCreate model)
         {
             var entity =
                 new Listing()
                 {
-                    OwnerId = _userId,
+                    UserId = _userId,
                     Description = model.Description,
                     Price = model.Price,
                     City = model.City,
@@ -31,10 +37,10 @@ namespace WOA.Services
             return _context.SaveChanges() == 1;
         }
 
-        public IEnumerable<ListingListItem> GetListingsByUserId()
+        public IEnumerable<ListingListItem> GetListingsByUserId(int id)
         {
             var query = _context.Listings
-                .Where(e => e.OwnerId == _userId)
+                .Where(e => e.UserId == _userId)
                 .Select(
                     e =>
                         new ListingListItem

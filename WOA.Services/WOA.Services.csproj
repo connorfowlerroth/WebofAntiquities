@@ -9,5 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\WOA.Models\WOA.Models.csproj" />
     <ProjectReference Include="..\WOA.Data\WOA.Data.csproj" />
+    <ProjectReference Include="..\WOA.Contracts\WOA.Contracts.csproj" />
   </ItemGroup>
 </Project>
