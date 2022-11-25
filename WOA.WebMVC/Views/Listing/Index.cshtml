@@ -44,8 +44,9 @@
                     @Html.DisplayFor(modelItem => item.DatePosted)
                 </td>
                 <td>
-
-
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ListingId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ListingId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ListingId })
                 </td>
             </tr>
         }

@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using WOA.Contracts;
 using WOA.Data;
-
+using WOA.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Services.AddDataProtection()
              .PersistKeysToFileSystem(new DirectoryInfo(@"serversharedirectory"));
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IListingService, ListingService>();
 
 var app = builder.Build();
 
