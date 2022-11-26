@@ -13,6 +13,7 @@
     <None Remove="Views\Listing\" />
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+    <None Remove="Views\Item\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -48,5 +49,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Listing\" />
+    <Folder Include="Views\Item\" />
   </ItemGroup>
 </Project>

@@ -1,10 +1,10 @@
 ﻿using WOA.Models;
 
-namespace WOA.Contracts
+namespace WOA.Contracts;
+
+public interface IItemService
 {
-    public interface IItemService
-    {
-        bool CreateItem(ItemCreate model);
-        void SetItemId(int itemId);
-    }
+    bool CreateItem(ItemCreate model);
+    IEnumerable<ItemListItem> GetItemById();
+    void SetItemId(int itemId);
 }

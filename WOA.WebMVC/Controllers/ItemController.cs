@@ -22,8 +22,8 @@ namespace WOA.WebMVC.Controllers
 
         public IActionResult Index()
         {
-            var listing = new ItemListItem[0];
-            return View(listing);
+            var item = new ItemListItem[0];
+            return View(item);
         }
 
         public IActionResult Create()

@@ -35,6 +35,24 @@ namespace WOA.Services
             return _context.SaveChanges() == 1;
 
         }
+
+        public IEnumerable<ItemListItem> GetItemById()
+        {
+            var query = _context.Items
+                .Where(e => e.ItemId == _itemId)
+                .Select(
+                    e =>
+                        new ItemListItem
+                        {
+                            ItemId = e.ItemId,
+                            Length = e.Length,
+                            Height = e.Height,
+                            Width = e.Width
+
+                        });
+
+            return query.ToArray();
+        }
     }
 }
 
