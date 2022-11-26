@@ -2,6 +2,7 @@
 using WOA.Data;
 using WOA.Contracts;
 using WOA.Models;
+using static WOA.Data.ItemEnums;
 
 namespace WOA.Services
 {
@@ -9,6 +10,7 @@ namespace WOA.Services
     {
         private readonly ApplicationDbContext _context;
         private Guid _userId;
+        //private Item item;
 
         public ListingService(ApplicationDbContext context)
         {
@@ -30,6 +32,8 @@ namespace WOA.Services
                     Price = model.Price,
                     City = model.City,
                     State = model.State,
+                    Condition = model.condition,
+                    TimePeriod = model.timePeriod,
                     DatePosted = DateTimeOffset.Now
                 };
 
@@ -48,6 +52,8 @@ namespace WOA.Services
                             ListingId = e.ListingId,
                             Description = e.Description,
                             Price = e.Price,
+                            condition = e.Item.condition,
+                            timePeriod = e.Item.timePeriod,
                             DatePosted = e.DatePosted
                         }
 

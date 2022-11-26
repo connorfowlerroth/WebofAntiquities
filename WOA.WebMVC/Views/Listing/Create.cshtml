@@ -31,6 +31,63 @@
                 <input asp-for="State" class="form-control" />
                 <span asp-validation-for="State" class="text-danger"></span>
             </div>
+            @*<div class="form-group">
+                <label asp-for="condition" class="control-label">Condition</label>
+                <input asp-for="condition" class="form-control" />
+                <span asp-validation-for="condition" class="text-danger"></span>
+            </div>*@
+            <div>
+                <select class="form-select" aria-label="condition">
+                    <option selected>Condition</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Good">Good</option>
+                    <option value="Mint">Mint</option>
+                </select>
+   
+            </div>
+
+
+            <div>
+                <select class="form-select" aria-label="timePeriod">
+                    <option selected>Time Period</option>
+
+                    <option value="WilliamandMary">William and Mary - 1685-1720</option>
+
+                    <option value="QueenAnneLouisXV">Queen Anne/Louis XV - 1720-1760</option>
+
+                    <option value="Chippendale">Chippendale - 1755-1790</option>
+
+                    <option value="FederalHepplewhite">Federal/ Hepplewhite - 1790-1815</option>
+
+                    <option value="Sheraton">Sheraton - 1790-1810</option>
+
+                    <option value="Empire">Empire - 1805-1830</option>
+
+                    <option value="Victorian">Victorian - 1830-1901</option>
+
+                    <option value="RococoRevival">Rococo Revival - 1845-1870</option>
+
+                    <option value="NaturalisticAesthetic">Naturalistic/Aesthetic - 1850-1914</option>
+
+                    <option value="NeoGreekEastlake">Neo-Greek/Eastlake - 1855-1890</option>
+
+                    <option value="ArtsandCrafts">Arts and Crafts - 1895-1915</option>
+
+                    <option value="ArtNouveau">Art Nouveau - 1896-1914</option>
+
+                    <option value="ArtDeco">Art Deco - 1920-1945</option>
+
+                    <option value="MidCenturyModernism">Mid-Century Modernism - 1945-1970</option>
+                </select>
+
+            </div>
+
+
+            @*<div class="form-group">
+                <label asp-for="timePeriod" class="control-label">Time Period</label>
+                <input asp-for="timePeriod" class="form-control" />
+                <span asp-validation-for="timePeriod" class="text-danger"></span>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

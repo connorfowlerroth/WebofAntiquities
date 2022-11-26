@@ -23,7 +23,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IListingService, ListingService>();
 
-builder.Services.AddScoped<IItemService, ItemService>();
+//builder.Services.AddScoped<IItemService, ItemService>();
 
 var app = builder.Build();
 

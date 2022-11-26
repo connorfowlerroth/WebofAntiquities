@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WOA.Contracts;
+using WOA.Data;
 using WOA.Models;
 using WOA.Services;
 
@@ -38,14 +39,14 @@ namespace WOA.WebMVC.Controllers
         }
 
         //GET
-        public ActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ListingCreate model)
+        public IActionResult Create(ListingCreate model)
         {
             if (ModelState.IsValid)
             {

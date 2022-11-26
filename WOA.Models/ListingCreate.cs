@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using static WOA.Data.ItemEnums;
 
 namespace WOA.Models
 {
@@ -21,6 +22,14 @@ namespace WOA.Models
 
         [Required]
         public string State { get; set; }
+
+        [Required]
+        [Display(Name = "Condition")]
+        public Condition condition { get; set; }
+
+        [Required]
+        [Display(Name = "Time Period")]
+        public TimePeriod timePeriod { get; set; }
 
         [Required]
         public DateTimeOffset DatePosted { get; set; }

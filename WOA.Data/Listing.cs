@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static WOA.Data.ItemEnums;
 
 namespace WOA.Data
 {
@@ -31,7 +32,8 @@ namespace WOA.Data
 
         
         public virtual Item Item { get; set; }
-
+        public ItemEnums.Condition Condition { get; set; }
+        public ItemEnums.TimePeriod TimePeriod { get; set; }
     }
 }
 
